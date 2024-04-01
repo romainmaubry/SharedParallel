@@ -9,17 +9,17 @@ LIBS =
 LDFLAGS =
 
 SOURCES=test.cpp shared_stack.cpp
-OBJECTS=4(SOURCES:.cpp=.o)
+OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=test
 
 all: $(SOURCES) $(EXECUTABLE)
 
 
 $(EXECUTABLE): $(OBJECTS)
-    $(CC) $(LDFLAGS) $(OBJECTS) -o $@
+	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 
 .cpp.o:
-    $(CC) $(CFLAGS) $< -o $@
+	$(CC) $(CFLAGS) $< -o $@
 
 run:
 	./test.exe $(ARGS)
