@@ -4,15 +4,15 @@
 
 template<class T>
 class SharedStack{
-   public:
-   T pop();
-   void push(const T& value);
-   size_t size();
-   
-   private:
+  public:
+    T pop();
+    void push(const T& value);
+    size_t size();
 
-   std::mutex m;
-   std::stack<T> stack;
+  private:
+
+    std::mutex m;
+    std::stack<T> stack;
 
 };
 
