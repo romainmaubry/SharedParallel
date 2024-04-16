@@ -5,10 +5,10 @@ LDFLAGS =
 
 CCFLAGS = 
 INCLUDE =
-LIBS = 
+LIBS = -lpthread
 LDFLAGS =
 
-SOURCES=test.cpp shared_stack.cpp
+SOURCES=test.cpp 
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=test
 
@@ -16,7 +16,7 @@ all: $(SOURCES) $(EXECUTABLE)
 
 
 $(EXECUTABLE): $(OBJECTS)
-	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+	$(CC) $(LDFLAGS) $(OBJECTS) -o $@ $(LIBS)
 
 .cpp.o:
 	$(CC) $(CFLAGS) $< -o $@
