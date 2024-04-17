@@ -20,7 +20,7 @@ void TestStack(){
   T stack;
   constexpr size_t nthreads=50;
   std::vector<std::thread> t(nthreads);
-  
+
   //Create threads
   for(size_t i=0;i<nthreads;i++){
     t[i]=std::thread(ModifyStack<T>,std::ref(stack),i);
@@ -35,4 +35,5 @@ void TestStack(){
 int main(int arc,char*argv[]){
   TestStack<SharedStack<double>>();
   TestStack<LfStack<double>>();
+  TestStack<LfSStack<double>>();
 }
